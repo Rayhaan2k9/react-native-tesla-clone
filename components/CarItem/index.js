@@ -5,13 +5,13 @@ import { StyledButton } from "../StyledButton";
 
 export const CarItem = (props) => {
 
-    const { name, tagline, img } = props;
+    const { name, tagline, image } = props.car;
 
     return (
         <View style={styles.carContainer}>
 
       <ImageBackground 
-      source={img} 
+      source={image} 
       style={styles.image}
       />
 
