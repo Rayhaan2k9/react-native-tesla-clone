@@ -4,9 +4,7 @@ import { styles } from "../StyledButton/styles";
 
 export const StyledButton = (props) => {
 
-    const type = props.type;
-    const onPress = props.onPress
-    
+    const { type, onPress } = props;
     const bgColor = type === 'primary' ? '#171A20CC' : '#FFFFFFA6';
     const textColor = type === 'primary' ? '#FFFFFF' : '#171A20';
 
@@ -15,7 +13,7 @@ export const StyledButton = (props) => {
             <TouchableOpacity
              style={[styles.button, {backgroundColor: bgColor}]}
              onPress={onPress}>
-            <Text style={[styles.btnText], {color: textColor}}>{props.content}</Text>
+            <Text style={[styles.btnText, {color: textColor}]}>{props.content}</Text>
 
             </TouchableOpacity>
         </View>

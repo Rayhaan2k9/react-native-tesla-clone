@@ -3,22 +3,25 @@ import { View, Text, ImageBackground } from "react-native";
 import { styles } from "./styles";
 import { StyledButton } from "../StyledButton";
 
-export const CarItem = () => {
+export const CarItem = (props) => {
+
+    const { name, tagline, img } = props;
+
     return (
         <View style={styles.carContainer}>
 
       <ImageBackground 
-      source={require('../../tesla-assets/images/ModelS.jpeg')} 
+      source={img} 
       style={styles.image}
       />
 
         <View style={styles.titles}>
-          <Text style={styles.heading}>Model S</Text>
-          <Text style={styles.subheading}>Starting at £60,000</Text>
+          <Text style={styles.heading}>{name}</Text>
+          <Text style={styles.subheading}>{tagline}</Text>
         </View>
-
+        <View style={styles.buttonContainer}>
         <StyledButton type='primary'
-         content={'CUSTOM ORDER'}
+         content={'custom order'}
          onPress={() => {
            console.log('Custom button pressed')
          }} />
@@ -28,7 +31,7 @@ export const CarItem = () => {
          onPress={() => {
            console.log('Existing order pressed')
          }} />
-
+        </View>
       </View>
     )
 }

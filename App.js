@@ -6,7 +6,14 @@ export default function App() {
   return (
     <View style={styles.container}>
       
-      <CarItem />
+      <CarItem 
+      name={"Model S"}
+      tagline={"Starting at £65600"}
+      taglineCTA={"Order now for Touchless Delivery"}
+      img={require('./tesla-assets/images/ModelS.jpeg')}
+      />
+
+      
 
 
       <StatusBar style="auto" />
