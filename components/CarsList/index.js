@@ -10,6 +10,7 @@ export const CarsList = () => {
             <FlatList
             data={cars}
             renderItem={({item}) => <CarItem car={item}/>}
+            keyExtractor={item => item.name}
             showsVerticalScrollIndicator={false}
             snapToAlignment={'start'}
             decelerationRate={'fast'}

@@ -1,11 +1,18 @@
 import react from "react";
-import { View, Text, ImageBackground } from "react-native";
+import { View, Text, ImageBackground, Alert } from "react-native";
 import { styles } from "./styles";
 import { StyledButton } from "../StyledButton";
 
 export const CarItem = (props) => {
 
     const { name, tagline, image } = props.car;
+
+    const alertMessage = () => {
+      Alert.alert(
+        "Ahh man!",
+        "Work hard and you'll be able to afford it one day, Insha Allah! :)"
+      )
+    }
 
     return (
         <View style={styles.carContainer}>
@@ -22,15 +29,11 @@ export const CarItem = (props) => {
         <View style={styles.buttonContainer}>
         <StyledButton type='primary'
          content={'custom order'}
-         onPress={() => {
-           console.log('Custom button pressed')
-         }} />
+         onPress={() => alertMessage()} />
 
         <StyledButton type='secondary'
          content={'EXISTING INVENTORY'}
-         onPress={() => {
-           console.log('Existing order pressed')
-         }} />
+         onPress={() => alertMessage()} />
         </View>
       </View>
     )
